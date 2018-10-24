@@ -1,0 +1,35 @@
+.container__today{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.widget__current{
+  width: 250px;
+}
+
+.widget__current--general{
+  min-width: calc(100%-5px);
+  height: 250px;
+  display: flex;
+  background: #ffeaa5;
+  position: relative;
+}
+
+.widget__current--details{
+  min-width: calc(100%-5px);
+  background-color: #ffeaa5;
+  height: 160px;
+  display:grid;
+  grid-template-columns: 120px 120px;
+  grid-row: auto auto;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.chart{
+  position:absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 1;
+}

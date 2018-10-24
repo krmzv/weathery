@@ -1,10 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Today } from './components/Today'
+import Forecast from './components/Forecast'
 
-import "./styles.css";
+import "./index.css";
 
 const App = () => (
-  <div className="App">
+  <div className="container">
+    <div className='widget__container'>
+      <Today/>
+      <Forecast/>
+    </div>
   </div>
 );
 
