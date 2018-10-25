@@ -9,6 +9,9 @@ body {
 }
 
 .path {
+  fill: white;
+  fill-opacity: .4;
+  stroke: #ff5f02;
   stroke-dasharray: 10 300;
   stroke-dashoffset: 640;
 }

@@ -8,17 +8,45 @@
   width: 250px;
 }
 
+.general-row{
+  display: inline-flex;
+  justify-content: space-between;
+  height: 100px;
+  width: 100%;
+  align-items: center;
+}
+
+.temp{
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.temp .degrees{
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.temp .sky{
+  font-size: 16px;
+  font-weight: 500;
+}
+
 .widget__current--general{
   min-width: calc(100%-5px);
   height: 250px;
   display: flex;
-  background: #ffeaa5;
+  background: #ffa96a;
   position: relative;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .widget__current--details{
   min-width: calc(100%-5px);
-  background-color: #ffeaa5;
+  background-color: #ffa96a;
   height: 160px;
   display:grid;
   grid-template-columns: 120px 120px;
