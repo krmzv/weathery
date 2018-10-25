@@ -11,6 +11,9 @@ body {
 .path {
   stroke-dasharray: 10 300;
   stroke-dashoffset: 640;
+}
+
+.widget__current--general:hover .path {
   animation: dash 1s cubic-bezier(.57,.21,.69,1.25);
 }
 
