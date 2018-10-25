@@ -1,18 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Today } from './components/Today'
-import Forecast from './components/Forecast'
-
+import App from './app'
+import { Provider } from 'react-redux'
+import configureStore from './state/store'
 import "./index.css";
 
-const App = () => (
-  <div className="container">
-    <div className='widget__container'>
-      <Today/>
-      <Forecast/>
-    </div>
-  </div>
-);
+const store = configureStore(window.__INITIAL_STATE__ || {})
+
+const Wrapper = () => (
+  <Provider store={store}>
+    <App/>
+  </Provider>
+)
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+ReactDOM.render(<Wrapper/>, rootElement);
