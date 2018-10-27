@@ -4,7 +4,9 @@ import { forecast } from './forecast'
 import { city } from './city'
 
 const state = combineReducers({
-  current
+  current,
+  forecast,
+  city
 })
 
 export default state

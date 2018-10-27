@@ -11,30 +11,30 @@ import sun from '../assets/icons/sun.svg'
 export const icons = [
   {
     name: "cloud",
-    img: () => <img src={cloud} />
+    img: () => <img className='icon' src={cloud} />
   },
   {
     name: "cloudy",
-    img: () => <img src={cloudy} />
+    img: () => <img className='icon' src={cloudy} />
   },
   {
     name: "moon",
-    img: () => <img src={moon} />
+    img: () => <img className='icon' src={moon} />
   },
   {
     name: "rain",
-    img: () => <img src={rain} />
+    img: () => <img className='icon' src={rain} />
   },
   {
     name: "snowing",
-    img: () => <img src={snowing} />
+    img: () => <img className='icon' src={snowing} />
   },
   {
     name: "storm",
-    img: () => <img src={storm} />
+    img: () => <img className='icon' src={storm} />
   },
   {
     name: "sun",
-    img: () => <img src={sun} />
+    img: () => <img className='icon' src={sun} />
   }
 ]

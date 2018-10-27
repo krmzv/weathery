@@ -1,8 +1,8 @@
 export const cities = [
   {
       code: "bg",
-      lon: -98.06839,
-      lat: 41.473068
+      lon: 20.46513,
+      lat: 44.804008
     },
   {
       code: "ns",

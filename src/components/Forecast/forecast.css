@@ -33,9 +33,17 @@
   overflow: hidden;
 }
 
+.icon{
+  height: 50px;
+}
+
 .tab{
   width: 20%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  transition: all 0.2 ease;
+  border: 1px solid white;
 }
 
 .tab--content{
@@ -44,6 +52,9 @@
   align-items: center;
   position: absolute;
   z-index: 2;
+  width: 104px;
+  height: 160px;
+  border-right: 1px solid rgba(255,255,255, .3);
 }
 
 .tab--blur{
@@ -62,4 +73,16 @@
   -o-filter: blur(4px);
   -ms-filter: blur(4px);
   filter: blur(4px);
+}
+
+.city{
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 250px;
+  border: none;
+  outline: none;
+  font-size: 52px;
+  font-weight: 700;
+  color: white;
+  background-color: transparent;
 }
