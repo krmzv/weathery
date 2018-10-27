@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux'
-import { Today } from './components/Today'
+import Today from './components/Today'
 import Forecast from './components/Forecast'
 import { getData } from './helpers/apiCall'
 import { cities } from './helpers/cities'
@@ -14,10 +14,16 @@ class App extends Component {
   }
 
   componentDidMount(){
-    // let lat = cities.find(x => x.code === this.state.cityCode ? x.code.lat)
-    // getData(cities.bg.lat, cities.bg.lon, 'weather').then(x => setCurrentWeather(x))
-    // getData()
+    const city = cities.find(c => c.code === this.state.cityCode)
+    console.log(city.lat, city.lon)
+    getData(city.lat, city.lon, 'weather').then(x =>this.props.setCurrentWeather(x))
+    getData(city.lat, city.lon, 'forecast').then(x => this.props.setForecast(x))
+  }
+  
+  componentDidUpdate(prevProps, prevState){ 
+    if(this.state.cityCode !== prevState.cityCode){
 
+    }
   }
 
   render(){

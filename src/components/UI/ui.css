@@ -7,3 +7,13 @@
   width: 100%;
   height: 100%;
 }
+
+.text--prim{
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.text--sec{
+  font-size: 14px;
+  font-weight: 400;
+}
