@@ -4,12 +4,16 @@ const initState = [
 	{
 		name: "Belgrade",
 		code: "bg",
-		selected: true
+		selected: true,
+		lon: 20.46513,
+    lat: 44.804008
 	},
 	{
 		name: "Novi Sad",
 		code: "ns",
-		selected: false
+		selected: false,
+		lon: 19.836941,
+    lat: 45.251671
 	}
 ]
 

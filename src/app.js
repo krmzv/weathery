@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import Today from './components/Today'
 import Forecast from './components/Forecast'
 import { getData } from './helpers/apiCall'
-import { cities } from './helpers/cities'
 import { setCurrentWeather } from './state/actions/current'
 import { setForecast } from './state/actions/forecast'
 
@@ -14,15 +13,16 @@ class App extends Component {
   }
 
   componentDidMount(){
-    const city = cities.find(c => c.code === this.state.cityCode)
-    console.log(city.lat, city.lon)
+    const city = this.props.cities.find(c => c.selected)
     getData(city.lat, city.lon, 'weather').then(x =>this.props.setCurrentWeather(x))
     getData(city.lat, city.lon, 'forecast').then(x => this.props.setForecast(x))
   }
   
   componentDidUpdate(prevProps, prevState){ 
-    if(this.state.cityCode !== prevState.cityCode){
-
+    if(prevProps.cities !== this.props.cities){
+      const c = this.props.cities.find(c => c.selected)
+      getData(c.lat, c.lon, 'weather').then(x =>this.props.setCurrentWeather(x))
+      getData(c.lat, c.lon, 'forecast').then(x => this.props.setForecast(x))
     }
   }
 
@@ -38,4 +38,6 @@ class App extends Component {
   }
 }
 
-export default connect(null, { setCurrentWeather, setForecast })(App)
+const stateToProps = ({ state: { cities } }) => ({ cities })
+
+export default connect(stateToProps, { setCurrentWeather, setForecast })(App)
