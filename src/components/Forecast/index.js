@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import classnames from 'classnames'
 import { connect } from 'react-redux'
 import { setCity } from '../../state/actions/city'
 import { isEmptyObj } from '../../helpers/units'
@@ -10,12 +11,12 @@ class Forecast extends Component {
 
   render(){
 
-    const { forecast, city: { name } , otherCity } = this.props
+    const { forecast, city: { name, code } , otherCity } = this.props
 
     const slice = !isEmptyObj(forecast) ? forecast.list.slice(0, 5) : null
 
     return(
-      <div className='widget widget__forecast'>
+      <div className={classnames('widget', 'widget__forecast', { [`widget__forecast--${code}`]: true })}>
         <div className='city--container'>
           <button className='city'>
             { name }

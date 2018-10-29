@@ -12,14 +12,22 @@
   justify-content: space-between;
 }
 
+.widget__forecast--bg{
+  background-image: url('../../assets/images/bg.jpg');
+}
+
+.widget__forecast--ns{
+  background-image: url('../../assets/images/ns.jpg');
+}
+
 .widget__forecast{
   width: 520px;
   height: 100%;
   background-color: transparent;
-  background-image: url('../../assets/images/bg.jpg');
   background-size: cover;
   position: relative;
   overflow: hidden;
+  transition: all 0.2s cubic-bezier(0.75, 0.124, 0.165, 1);
 }
 
 .days{
