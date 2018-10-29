@@ -10,15 +10,22 @@ class Forecast extends Component {
 
   render(){
 
-    const { forecast, city } = this.props
+    const { forecast, city: { name } , otherCity } = this.props
 
     const slice = !isEmptyObj(forecast) ? forecast.list.slice(0, 5) : null
 
     return(
       <div className='widget widget__forecast'>
-        <button className='city'>
-          { city }
-        </button>
+        <div className='city--container'>
+          <button className='city'>
+            { name }
+          </button>
+          <div className='city--menu'>
+            <button onClick={() => this.props.setCity(otherCity.code)} className='menu--item'>
+              { otherCity ? otherCity.name : null }
+            </button>
+          </div>
+        </div>
         <div className='days'>
           { slice ? slice.map((x, idx) => <DayTab data={x} key={idx} />) : null }
         </div>
@@ -27,6 +34,6 @@ class Forecast extends Component {
   }
 }
 
-const stateToProps = ({ state: { forecast, city } }) => ({ forecast, city })
+const stateToProps = ({ state: { forecast, cities } }) => ({ forecast, city: cities.find(x => x.selected), otherCity: cities.find(x => !x.selected) })
 
 export default connect(stateToProps, { setCity })(Forecast)

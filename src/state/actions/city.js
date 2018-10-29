@@ -1,3 +1,3 @@
 import { SET_CITY } from '../reducers/city' 
 
-export const setCity = (city) => ({ type: SET_CITY, city })
+export const setCity = (cityCode) => ({ type: SET_CITY, cityCode })
