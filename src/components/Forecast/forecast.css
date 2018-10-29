@@ -54,7 +54,6 @@
   border: 1px solid white;
 }
 
-
 .tab--content{
   display: flex;
   flex-direction: column;
@@ -64,7 +63,14 @@
   width: 104px;
   height: 160px;
   border-right: 1px solid rgba(255,255,255, .3);
-  transition: all 0.2 ease;
+  transform-origin: center;
+  transition: all 0.2s ease;
+}
+
+.tab--content:hover{
+  transition: all 0.2s ease;
+  transform-origin: center;
+  transform: scale(1.15);
 }
 
 .tab--blur{
